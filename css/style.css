@@ -357,6 +357,8 @@ input[type="radio"].visually-hidden {
   display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  justify-content: space-between;
+  width: 458px;
   padding: 55px;
   padding-top: 42px;
 
@@ -417,8 +419,10 @@ input[type="radio"].visually-hidden {
 }
 
 .search__form input {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;*/
+          /*box-sizing: border-box;*/
+  margin-left: auto;
+
   font: inherit;
   text-transform: uppercase;
 
@@ -437,7 +441,7 @@ input[type="radio"].visually-hidden {
 
 .search__arrival input,
 .search__exit input {
-  width: 346px;
+  width: 296px;
   padding-top: 5px;
   padding-bottom: 6px;
   padding-left: 12px;
@@ -447,8 +451,11 @@ input[type="radio"].visually-hidden {
 
 .search__calendar-picker {
   position: absolute;
-  right: 3px;
-  top: 7px;
+  /*right: 3px;*/
+  left: 422px;
+  /*top: 7px;*/
+  top: 50%;
+  margin-top: -13px;
 
   border: none;
   background-color: transparent;
@@ -475,9 +482,11 @@ input[type="radio"].visually-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
   margin-bottom: 39px;
 }
 
@@ -488,11 +497,29 @@ input[type="radio"].visually-hidden {
 }
 
 .search__residents input {
-  width: 114px;
-  padding: 6px 33px 6px 53px;
+  width: 23px;
+  padding-top: 6px;
+  padding-right: 38px;
+  padding-bottom: 6px;
+  padding-left: 53px;
   margin-top: -5px;
 }
 
+.search__residents .search__adults {
+  width: 226px;
+}
+
+.search__adults label {
+  margin-right: 41px;
+}
+
+.search__residents .search__children {
+  width: 179px;
+}
+
+.search__children label {
+  margin-right: 27px;
+}
 .search__residents button {
   position: absolute;
 
@@ -501,20 +528,9 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.search__adults {
-  margin-right: 53px;
-}
-
-.search__adults label {
-  margin-right: 41px;
-}
-
-.search__children label {
-  margin-right: 27px;
-}
 
 .search__amount-adults--decrease {
-  right: 76px;
+  left: 112px;
   top: -5px;
 
   padding: 19px;
@@ -535,7 +551,8 @@ input[type="radio"].visually-hidden {
 }
 
 .search__amount-adults--increase {
-  right: 1px;
+  /*right: 1px;*/
+  left: 187px;
   top: -5px;
 
   padding: 19px;
