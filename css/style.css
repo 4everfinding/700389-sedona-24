@@ -123,6 +123,7 @@ input[type="radio"].visually-hidden {
   min-height: 508px;
   margin-bottom: 60px;
 
+  background-color: #4c7899;
   background-image: url("../img/background-mask.svg"), url("../img/slogan.svg"), url("../img/background.jpg");
   background-position: center bottom, center 77px, center top;
   background-repeat: no-repeat;
@@ -308,9 +309,6 @@ input[type="radio"].visually-hidden {
 }
 
 .search__button--open {
-  position: relative;
-  z-index: 4;
-
   width: 100%;
   padding: 31px;
   padding-bottom: 30px;
@@ -350,55 +348,38 @@ input[type="radio"].visually-hidden {
   background-color: #5496bd;
 }
 
+.map {
+  position: relative;
+
+  min-height: 594px;
+
+  overflow: hidden;
+}
+
 .search__form {
-  position: absolute;
+  position: relative;
   z-index: 3;
 
-  display: none;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   justify-content: space-between;
   width: 458px;
   padding: 55px;
+  margin: 0 auto;
 
   background-color: #fff;
   -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
           box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
-}
 
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translateY(-86px);
-            transform: translateY(-86px);
 
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0% {
-    -webkit-transform: translateY(-86px);
-             transform: translateY(-86px);
-  }
-  100% {
-     -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+  transform: translateY(-100%);
 }
 
 .search__form--show {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-animation-name: bounce;
-          animation-name: bounce;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  transform: translateY(0%);
+  transition-property: transform;
+  transition-duration: 0.6s;
 }
 
 .search__form p {
@@ -423,6 +404,7 @@ input[type="radio"].visually-hidden {
 
   font: inherit;
   text-transform: uppercase;
+  vertical-align: middle;
 
   border: none;
   background-color: #f2f2f2;
@@ -610,12 +592,10 @@ input[type="radio"].visually-hidden {
   opacity: 1;
 }
 
-.map {
-  position: relative;
-}
-
 .map iframe {
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: 2;
 
   display: block;
@@ -632,6 +612,9 @@ input[type="radio"].visually-hidden {
 
   vertical-align: bottom;
 }
+
+
+
 /* Стили внутренней страницы каталога */
 
 .filters {

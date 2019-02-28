@@ -19,13 +19,16 @@ try {
 formLink.addEventListener("click", function(evt) {
     evt.preventDefault();
     formSearch.classList.toggle("search__form--show");
-    dateArrival.focus();
     if (storageAdults) {
       amountAdults.value = storageAdults;
     }
     if (storageChildren) {
       amountChildren.value = storageChildren;
     }
+});
+
+formSearch.addEventListener("transitionend", function() {
+    dateArrival.focus();
 });
 
 window.addEventListener("keydown", function(evt) {
