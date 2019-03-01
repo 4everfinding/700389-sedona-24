@@ -19,6 +19,7 @@ try {
 formLink.addEventListener("click", function(evt) {
     evt.preventDefault();
     formSearch.classList.toggle("search__form--show");
+    formSearch.classList.remove("search__form--error");
     if (storageAdults) {
       amountAdults.value = storageAdults;
     }
@@ -36,6 +37,7 @@ window.addEventListener("keydown", function(evt) {
     if (formSearch.classList.contains("search__form--show")) {
       evt.preventDefault();
       formSearch.classList.remove("search__form--show");
+      formSearch.classList.add("search__form--error");
     }
   }
 });
@@ -43,7 +45,9 @@ window.addEventListener("keydown", function(evt) {
 formSearch.addEventListener("submit", function(evt) {
   if (!dateArrival.value || !dateExit.value || !amountAdults.value || !amountChildren.value) {
     evt.preventDefault();
-    alert("Не все поля заполнены!");
+    formSearch.classList.remove("search__form--error");
+    formSearch.offsetWidth = formSearch.offsetWidth;
+    formSearch.classList.add("search__form--error");
   } else {
     if (isStorageSupport) {
       localStorage.setItem("adults", amountAdults.value);
