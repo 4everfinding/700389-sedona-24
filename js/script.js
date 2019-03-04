@@ -16,6 +16,10 @@ try {
   isStorageSupport = false;
 }
 
+window.onload = function() {
+  formSearch.classList.add("search__form--hide");
+};
+
 formLink.addEventListener("click", function(evt) {
     evt.preventDefault();
     formSearch.classList.toggle("search__form--show");
@@ -37,7 +41,6 @@ window.addEventListener("keydown", function(evt) {
     if (formSearch.classList.contains("search__form--show")) {
       evt.preventDefault();
       formSearch.classList.remove("search__form--show");
-      formSearch.classList.add("search__form--error");
     }
   }
 });
